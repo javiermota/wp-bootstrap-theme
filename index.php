@@ -8,7 +8,13 @@
       <?php if(have_posts()) : ?>
          <?php while(have_posts()) : the_post(); ?>
 
-        <h2><?php the_title(); ?></h2>
+        <h2>
+          <?php if(is_single()) : ?>
+            <?php the_title(); ?>
+          <?php else : ?>
+            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+          <?php endif; ?>
+        </h2>
 
         <?php the_content(); ?>
 
