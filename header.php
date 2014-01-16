@@ -5,6 +5,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta charset="utf8" />
 
+    <link href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Mrs+Sheppards' rel='stylesheet' type='text/css'>
     <link href="<?php bloginfo('template_directory'); ?>/css/main.css" rel="stylesheet" media="screen">
 		<link href="<?php bloginfo('stylesheet_url');?>" type="text/css" rel="stylesheet" media="screen, projection" />
 		<script src="http://code.jquery.com/jquery.js"></script>
@@ -18,22 +21,21 @@
 
   <body <?php body_class($class); ?>>
 
-    <nav class="navbar navbar-default" role="navigation">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="<?php echo home_url(); ?>">Dev Site</a>
-      </div>
+    <header class="main-header">
+      <div class="container">
+        <div class="logo-container">
+          <h2 class="logo"><a  href="<?php echo home_url(); ?>">JavierMota.com</a></h2>
+        </div>
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse">
-       <?php wp_nav_menu( array('menu' => 'Main', 'menu_class' => 'nav navbar-nav navbar-right', 'depth'=> 3, 'container'=> false, 'walker'=> new Bootstrap_Walker_Nav_Menu)); ?>
-      </div><!-- /.navbar-collapse -->
-    </nav>
+        <button class="navbar-toggle visible-xs" type="button" data-toggle="collapse" data-target="#top-menu">
+            <i class="fa fa-bars fa-2x"></i>
+        </button>
+
+        <nav  id="top-menu" class="top-menu collapse">
+          <?php wp_nav_menu( array('menu' => 'Main', 'menu_class' => 'nav navbar-nav navbar-right', 'depth'=> 3, 'container'=> false, 'walker'=> new Bootstrap_Walker_Nav_Menu)); ?>
+        </nav>
+      </div>
+    </header>
 
     <div id="main-container" class="container">
 

@@ -2,41 +2,42 @@
 
 <div class="row">
 
-	<div class="col-md-8">
+  <div class="col-sm-9 col-md-8">
+    <div class="blog-container">
 
-		<?php if(have_posts()) : ?>
-		   <?php while(have_posts()) : the_post(); ?>
+      <?php if(have_posts()) : ?>
+         <?php while(have_posts()) : the_post(); ?>
 
-			<h2><?php the_title(); ?></h2>
+        <h2><?php the_title(); ?></h2>
 
-		 	<?php the_content(); ?>
+        <?php the_content(); ?>
 
-		   <?php endwhile; ?>
+         <?php endwhile; ?>
 
-		<?php else : ?>
+      <?php else : ?>
 
-		<div class="alert alert-info">
-		  <strong>No content in this loop</strong>
-		</div>
+    <div class="alert alert-info">
+      <strong>No content in this loop</strong>
+    </div>
 
-		<?php endif; ?>
+    <?php endif; ?>
+
+    </div>
+  </div>
+
+  <div class="col-sm-3 col-md-offset-1 right-sidebar">
+
+  <?php
+   if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Sidebar')) : //  Sidebar name
+  ?>
 
 
-	</div>
 
-	<div class="col-md-4">
+    <?php
+         endif;
+    ?>
 
-	<?php
-	 if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Sidebar')) : //  Sidebar name
-	?>
-
-
-
-		<?php
-		     endif;
-		?>
-
-	</div>
+  </div>
 
 </div>
 

@@ -1,0 +1,13 @@
+.form-control {
+  border: @input-border-width solid @input-border;
+  border-radius: @input-border-radius;
+  -webkit-appearance: none;
+  .box-shadow(none);
+  .transition(~"border-color ease-in-out .15s, box-shadow ease-in-out .15s");
+
+  &:focus {
+    border-color: @component-active-bg !important;
+    outline: 0;
+    .box-shadow(none);
+  }
+}
