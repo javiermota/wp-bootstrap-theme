@@ -6,17 +6,22 @@
     <div class="blog-container">
 
       <?php if(have_posts()) : ?>
-         <?php while(have_posts()) : the_post(); ?>
+        <?php while(have_posts()) : the_post(); ?>
 
-        <h2>
-          <?php if(is_single()) : ?>
-            <?php the_title(); ?>
-          <?php else : ?>
-            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-          <?php endif; ?>
-        </h2>
+          <div class="post-item">
+            <h2 class="post-title">
+              <?php if(is_single()) : ?>
+                <?php the_title(); ?>
+              <?php else : ?>
+                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+              <?php endif; ?>
+            </h2>
 
-        <?php the_content(); ?>
+            <?php the_post_thumbnail(null, array('class'  => "img-responsive post-img")); ?>
+            <p class="post-date"><?php the_time('M d, Y'); ?></p>
+            <p><a href="" class="post-comments"><?php comments_number() ?></a></p>
+            <?php the_content(); ?>
+          </div>
 
          <?php endwhile; ?>
 
