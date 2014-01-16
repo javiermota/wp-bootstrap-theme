@@ -32,7 +32,7 @@
         </button>
 
         <nav  id="top-menu" class="top-menu collapse">
-          <?php wp_nav_menu( array('menu' => 'Main', 'menu_class' => 'nav navbar-nav navbar-right', 'depth'=> 3, 'container'=> false, 'walker'=> new Bootstrap_Walker_Nav_Menu)); ?>
+          <?php wp_nav_menu( array('menu' => 'Main', 'menu_class' => '', 'depth'=> 3, 'container'=> false, 'walker'=> new Bootstrap_Walker_Nav_Menu)); ?>
         </nav>
       </div>
     </header>
