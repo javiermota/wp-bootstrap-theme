@@ -19,7 +19,7 @@
 
   </head>
 
-  <body>
+  <body <?php body_class(); ?>>
 
     <header class="main-header">
       <div class="container">
